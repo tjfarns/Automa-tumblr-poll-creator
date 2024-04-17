@@ -6,10 +6,10 @@ An importable file that can be used in Automa to automatically generate tumblr p
 If you’ve ever wanted to run a tournament but don’t love the idea of manually creating 100+ posts, this Automa workflow is for you! 
 
 ### Things You’ll Need: 
-An account on tumblr and a blog to publish to
-The browser extension “Automa” (available in both Chrome and Firefox)
-This specific Automa workflow import file
-A Google Sheet spreadsheet with some specific column headers ([template here](https://docs.google.com/spreadsheets/d/1eF-1u3MfXCt0riDgh28uxfJu2iNxu607RwY-6fyWi4M/edit?usp=sharing))
+* An account on tumblr and a blog to publish to
+* The browser extension “Automa” (available in both Chrome and Firefox)
+* This specific Automa workflow import file
+* A Google Sheet spreadsheet with some specific column headers ([template here](https://docs.google.com/spreadsheets/d/1eF-1u3MfXCt0riDgh28uxfJu2iNxu607RwY-6fyWi4M/edit?usp=sharing))
 ### Steps: 
 1. If you haven’t already, download the Automa extension. ([Firefox link](https://addons.mozilla.org/en-US/firefox/addon/automa/)) ([Chrome link](https://chromewebstore.google.com/detail/automa/infppggnoaenmfagbfknfkancpbljcca?pli=1))
 2. Fill out the Google Sheet with your contestant names, image urls, and fandom names according to the template. (Note: for the image URLs, don’t use any random URL you find on the internet, instead download and then upload the image to Google Drive or other hosting site of your choice and link it from there. This is to both protect your image from breaking if the URL goes dead at any point, and also just to avoid straining a random site’s servers.)
