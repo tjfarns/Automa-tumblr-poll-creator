@@ -26,7 +26,7 @@ This workflow uses the following steps using Automa's built-in tools:
 2. If you haven’t already, download the attached Automa .json file from this repo. Open it in your no-frills text editor of choice (like Notepad). Using Find and Replace (Ctrl + H for most apps) replace the text “TOURNAMENT-BLOG-NAME-HERE” with the name of the blog you want these polls posted to, and “YOUR-SPREADSHEET-ID-HERE” with your Google Sheet’s spreadsheet ID (this is the long id found in the URL of your spreadsheet). 
 3. Open up the Automa dashboard (you can access this by finding the extension in your browser + opening up the small pop-up dialogue, which then has a button in the top right corner).
 4. Import the workflow. (Note: If you want to test this with a single poll first, open up the workflow in Automa's editor and unlink the “Loop Breakpoint” block by double clicking on the line that connects it to the previous block).
-6. Hit “Save”, and then click the play button. (Make sure you're logged into tumblr in your browser so Automa can successfully open up the "create post" dialogue.)
+6. Open up the workflow, hit “Save”, and then click the play button. (Make sure you're logged into tumblr in your browser so Automa can successfully open up the "create post" dialogue.)
 7. Wait until your poll(s) are finished generating. This will take a few seconds per poll, so you may want to walk away and leave your computer alone for a while.
 8. Go to your queue and verify that the polls were generated as expected.
 9. Profit!
