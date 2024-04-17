@@ -1,1 +1,1207 @@
-{"extVersion":"1.28.27","name":"Create tumblr tournament","icon":"riGlobalLine","table":[{"id":"E5kuh","name":"Blogname","type":"string"}],"version":"1.28.27","drawflow":{"nodes":[{"type":"BlockBasic","data":{"disableBlock":false,"description":"","type":"manual","interval":60,"delay":5,"date":"","time":"00:00","url":"","shortcut":"","activeInInput":false,"isUrlRegex":false,"days":[],"contextMenuName":"","contextTypes":[],"parameters":[],"preferParamsInTab":false,"observeElement":{"selector":"","baseSelector":"","matchPattern":"","targetOptions":{"subtree":false,"childList":true,"attributes":false,"attributeFilter":[],"characterData":false},"baseElOptions":{"subtree":false,"childList":true,"attributes":false,"attributeFilter":[],"characterData":false}}},"events":{},"position":{"x":96,"y":272.5},"id":"ybGntIX-JM_Lax5r0OfKg","label":"trigger"},{"type":"BlockBasic","data":{"disableBlock":false,"range":"A:I","refKey":"allcontestants","type":"get","customData":"","description":"","spreadsheetId":"YOUR-SPREADSHEET-ID-HERE","dataColumn":"","saveData":true,"assignVariable":false,"variableName":"","firstRowAsKey":true,"keysAsFirstRow":true,"valueInputOption":"RAW","InsertDataOption":"INSERT_ROWS","dataFrom":"data-columns","$breakpoint":false},"events":{},"position":{"x":388,"y":272.5},"label":"google-sheets","id":"5e8niky"},{"type":"BlockBasic","data":{"disableBlock":false,"loopId":"pollcontestants","maxLoop":0,"toNumber":10,"fromNumber":1,"startIndex":"1","loopData":"[]","description":"Loop through tournament values","variableName":"","referenceKey":"allcontestants","reverseLoop":false,"elementSelector":"","waitForSelector":false,"waitSelectorTimeout":5000,"resumeLastWorkflow":false,"loopThrough":"google-sheets"},"events":{},"position":{"x":680,"y":272.5},"label":"loop-data","id":"76rf7x2"},{"type":"BlockBasic","data":{"disableBlock":false,"description":"Open tumblr and create new text post","url":"https://www.tumblr.com/new/text","userAgent":"","active":true,"tabZoom":1,"inGroup":false,"waitTabLoaded":true,"updatePrevTab":false,"customUserAgent":false},"events":{},"position":{"x":972,"y":272.5},"label":"new-tab","id":"q6o3t0t"},{"type":"BlockBasic","data":{"disableBlock":false,"url":"","description":"","activeTab":true,"closeType":"tab","allWindows":false},"events":{},"position":{"x":4482.068684282481,"y":429.5159183894906},"label":"close-tab","id":"3ev4hk0"},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Fill out Header","blocks":[{"id":"event-click","itemId":"hoik1d3","data":{"disableBlock":false,"description":"Heading","findBy":"cssSelector","waitForSelector":true,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Block: Heading\"]","markEl":false,"multiple":false}},{"id":"forms","data":{"disableBlock":false,"description":"Title","findBy":"cssSelector","waitForSelector":true,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Block: Heading\"]","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.Title }} ","delay":0,"events":[]},"itemId":"TfYy-"}]},"events":{},"id":"t6fhka1","label":"blocks-group","position":{"x":1652,"y":272.5}},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Create and fill out poll","blocks":[{"id":"event-click","data":{"disableBlock":false,"description":"Body","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Add default block\"]","markEl":false,"multiple":false},"itemId":"JJl5m"},{"id":"event-click","data":{"disableBlock":false,"description":"Add poll","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Add poll\"]","markEl":false,"multiple":false},"itemId":"dDtek"},{"id":"forms","itemId":"myxr2yd","data":{"disableBlock":false,"description":"Question","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"div[aria-label=\"Ask a question...\"]","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.Question }}","delay":0,"events":[]}},{"id":"forms","data":{"disableBlock":false,"description":"Choice 1","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"div[aria-label=\"Choice 1\"]","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.Choice1 }}","delay":0,"events":[]},"itemId":"DBjzN"},{"id":"forms","data":{"disableBlock":false,"description":"Choice 2","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"div[aria-label=\"Choice 2\"]","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.Choice2 }}","delay":0,"events":[]},"itemId":"ZEn29"}]},"events":{},"id":"n1xg1rv","label":"blocks-group","position":{"x":3076,"y":272.5}},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Upload image 1","blocks":[{"id":"event-click","data":{"disableBlock":false,"description":"Body","findBy":"cssSelector","waitForSelector":true,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Empty block; start writing or type forward slash to choose a block\"]","markEl":false,"multiple":false},"itemId":"dvKeC"},{"id":"event-click","itemId":"wk9mh2p","data":{"disableBlock":false,"description":"Photo icon","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Add photo\"]","markEl":false,"multiple":false}},{"id":"event-click","data":{"disableBlock":false,"description":"Web img","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"Add images from web\"]","markEl":false,"multiple":false},"itemId":"h2CLM"},{"id":"forms","data":{"disableBlock":false,"description":"URL","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"input.Q1epK","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.ImageURL1 }}","delay":0,"events":[]},"itemId":"SuzCd"},{"id":"event-click","data":{"disableBlock":false,"description":"Insert","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"Insert\"]","markEl":false,"multiple":false},"itemId":"PdBWL"}]},"events":{},"id":"y02n0k9","label":"blocks-group","position":{"x":2008,"y":272.5}},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Change to queue and publish","blocks":[{"id":"event-click","itemId":"pvsd8jl","data":{"disableBlock":false,"description":"Dropdown","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"Open post state options\"]","markEl":false,"multiple":false}},{"id":"event-click","data":{"disableBlock":false,"description":"Queue","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":".yPzUb:nth-child(2) > .MXQob","markEl":false,"multiple":false},"itemId":"QtI5e"},{"id":"delay","data":{"disableBlock":false,"time":"5000"},"itemId":"rVz3x"},{"id":"event-click","data":{"disableBlock":false,"description":"Publish","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button.VxmZd","markEl":false,"multiple":false},"itemId":"qLOMz"}]},"events":{},"id":"869t8sn","label":"blocks-group","position":{"x":4144,"y":272.5}},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Add tags","blocks":[{"id":"event-click","itemId":"glw1inm","data":{"disableBlock":false,"description":"Tags editor","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"textarea[aria-label=\"Tags editor\"]","markEl":false,"multiple":false}},{"id":"forms","data":{"disableBlock":false,"description":"cntstnt1","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"textarea[aria-label=\"Tags editor\"]","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.Tags }}","delay":0,"events":[]},"itemId":"z9Msq"},{"id":"press-key","data":{"disableBlock":false,"keys":"Enter","selector":"","pressTime":"0","description":"","keysToPress":"","action":"press-key"},"itemId":"eTlqC"},{"id":"delay","data":{"disableBlock":false,"time":"2000"},"itemId":"GT5at"}]},"events":{},"id":"5yjqpia","label":"blocks-group","position":{"x":3432,"y":272.5}},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Change to correct blog","blocks":[{"id":"event-click","data":{"disableBlock":false,"description":"Dropdown","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button.zOAiO","markEl":false,"multiple":false},"itemId":"S3eqr"},{"id":"delay","data":{"disableBlock":false,"time":500},"itemId":"oPPoK"},{"id":"event-click","data":{"disableBlock":false,"description":"Blog name","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"TOURNAMENT-BLOG-NAME-HERE\"]","markEl":false,"multiple":false},"itemId":"3QbqD"},{"id":"delay","data":{"disableBlock":false,"time":500},"itemId":"M56-G"}]},"events":{},"id":"cv2hqyr","label":"blocks-group","position":{"x":1296,"y":272.5}},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Upload image 2","blocks":[{"id":"event-click","data":{"disableBlock":false,"description":"Body","findBy":"cssSelector","waitForSelector":true,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Add default block\"]","markEl":false,"multiple":false},"itemId":"dvKeC"},{"id":"event-click","itemId":"wk9mh2p","data":{"disableBlock":false,"description":"Photo icon","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"[aria-label=\"Add photo\"]","markEl":false,"multiple":false}},{"id":"event-click","data":{"disableBlock":false,"description":"Web img","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"Add images from web\"]","markEl":false,"multiple":false},"itemId":"h2CLM"},{"id":"forms","data":{"disableBlock":false,"description":"URL","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"input.Q1epK","markEl":false,"multiple":false,"selected":true,"clearValue":true,"getValue":false,"saveData":false,"dataColumn":"","selectOptionBy":"value","optionPosition":"1","assignVariable":false,"variableName":"","type":"text-field","value":"!!{{ loopData@pollcontestants.ImageURL2 }}","delay":0,"events":[]},"itemId":"SuzCd"},{"id":"event-click","data":{"disableBlock":false,"description":"Insert","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"Insert\"]","markEl":false,"multiple":false},"itemId":"PdBWL"}]},"events":{},"label":"blocks-group","id":"030esj5","position":{"x":2720,"y":170}},{"type":"BlockConditions","data":{"description":"","disableBlock":false,"conditions":[{"id":"ERjULwVQskFvI_ghqtvy_","name":"Path 1","conditions":[{"id":"yPD3mg3aXpiFfcfmUmHED","conditions":[{"id":"ftevbKcRrmHkSP7HB9Vnk","items":[{"type":"value","category":"value","data":{"value":"!!{{ loopData@pollcontestants.ImageURL2 }}"},"id":"G9g-mXWvLTDSR108FvUwn"},{"category":"compare","type":"cnt","id":"J2yx77IfMGB78o_UAgeeG"},{"type":"value","category":"value","data":{"value":"."},"id":"DiB98jbckZVkoTDAFJG_A"}]}]}]},{"id":"gbfdx5bwzUB_s8cTIyWH1","name":"Path 2","conditions":[{"id":"zY4eJizoP5jn2srbvANAj","conditions":[{"id":"cBGnu0W7PzwIGmDgTwspe","items":[{"type":"value","category":"value","data":{"value":"!!{{ loopData@pollcontestants.ImageURL2 }}"},"id":"-iJx6EcMg1wkU1bOr6S6j"},{"category":"compare","type":"nci","id":"RKqfGrm_40_ahY9i1mXGG"},{"type":"value","category":"value","data":{"value":"."},"id":"fZdfbqmfyqwCLfLwHeIIP"}]}]}]}],"retryConditions":false,"retryCount":10,"retryTimeout":1000},"events":{},"position":{"x":2364,"y":272.5},"label":"conditions","id":"0jqlswm"},{"type":"BlockGroup","data":{"disableBlock":false,"name":"Change duration to 7 days","blocks":[{"id":"event-click","itemId":"gkxq398","data":{"disableBlock":false,"description":"","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"Select poll duration\"]","markEl":false,"multiple":false}},{"id":"event-click","data":{"disableBlock":false,"description":"","findBy":"cssSelector","waitForSelector":false,"waitSelectorTimeout":5000,"selector":"button[aria-label=\"1 Week\"]","markEl":false,"multiple":false},"itemId":"DJDpJ"}]},"events":{},"id":"wqkf1o8","label":"blocks-group","position":{"x":3788,"y":272.5}},{"type":"BlockLoopBreakpoint","data":{"disableBlock":false,"loopId":"pollcontestants","clearLoop":false},"events":{},"position":{"x":4789.849828090862,"y":333.34286988851386},"label":"loop-breakpoint","id":"vufrgle"}],"edges":[{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"ybGntIX-JM_Lax5r0OfKg-output-1","targetHandle":"5e8niky-input-1","source":"ybGntIX-JM_Lax5r0OfKg","target":"5e8niky","data":{},"events":{},"id":"vueflow__edge-ybGntIX-JM_Lax5r0OfKgybGntIX-JM_Lax5r0OfKg-output-1-cuu6wt2cuu6wt2-input-1","sourceX":307.9999515215575,"sourceY":308.49997854232873,"targetX":368.0000007947286,"targetY":308.49997854232873,"class":"connected-edges"},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"5e8niky-output-1","targetHandle":"76rf7x2-input-1","source":"5e8niky","target":"76rf7x2","data":{},"events":{},"id":"vueflow__edge-5e8niky5e8niky-output-1-76rf7x276rf7x2-input-1","sourceX":599.9999515215575,"sourceY":308.49997854232873,"targetX":660.0000007947285,"targetY":310.49999880790716,"class":"connected-edges"},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"76rf7x2-output-1","targetHandle":"q6o3t0t-input-1","source":"76rf7x2","target":"q6o3t0t","data":{},"events":{},"id":"vueflow__edge-76rf7x276rf7x2-output-1-q6o3t0tq6o3t0t-input-1","sourceX":891.9999515215575,"sourceY":310.49999880790716,"targetX":952.0000007947285,"targetY":308.49997854232873},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"t6fhka1-output-1","targetHandle":"y02n0k9-input-1","source":"t6fhka1","target":"y02n0k9","data":{},"events":{},"id":"vueflow__edge-t6fhka1t6fhka1-output-1-y02n0k9y02n0k9-input-1","sourceX":1927.9999896685285,"sourceY":404.1667329602745,"targetX":1988.0000007947285,"targetY":442.5000647703781},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"n1xg1rv-output-1","targetHandle":"5yjqpia-input-1","source":"n1xg1rv","target":"5yjqpia","data":{},"events":{},"id":"vueflow__edge-n1xg1rvn1xg1rv-output-1-5yjqpia5yjqpia-input-1","sourceX":3351.9999896685285,"sourceY":442.5000647703781,"targetX":3412.0000007947287,"targetY":442.5000647703781},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"cv2hqyr-output-1","targetHandle":"t6fhka1-input-1","source":"cv2hqyr","target":"t6fhka1","data":{},"events":{},"id":"vueflow__edge-cv2hqyrcv2hqyr-output-1-t6fhka1t6fhka1-input-1","sourceX":1571.9999896685285,"sourceY":442.5000647703781,"targetX":1632.0000007947285,"targetY":404.1667329602745},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"030esj5-output-1","targetHandle":"n1xg1rv-input-1","source":"030esj5","target":"n1xg1rv","data":{},"events":{},"id":"vueflow__edge-030esj5030esj5-output-1-n1xg1rvn1xg1rv-input-1","sourceX":2995.9999896685285,"sourceY":340.0000647703781,"targetX":3056.0000007947287,"targetY":442.5000647703781},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"y02n0k9-output-1","targetHandle":"0jqlswm-input-1","source":"y02n0k9","target":"0jqlswm","data":{},"events":{},"id":"vueflow__edge-y02n0k9y02n0k9-output-1-0jqlswm0jqlswm-input-1","sourceX":2283.9999896685285,"sourceY":442.5000647703781,"targetX":2344.0000007947287,"targetY":375.05560944256746},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"0jqlswm-output-ERjULwVQskFvI_ghqtvy_","targetHandle":"030esj5-input-1","source":"0jqlswm","target":"030esj5","data":{},"events":{},"id":"vueflow__edge-0jqlswm0jqlswm-output-ERjULwVQskFvI_ghqtvy_-030esj5030esj5-input-1","sourceX":2640.9999998013177,"sourceY":361.6667346490727,"targetX":2700.0000007947287,"targetY":340.0000647703781},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"0jqlswm-output-fallback","targetHandle":"n1xg1rv-input-1","source":"0jqlswm","target":"n1xg1rv","data":{},"events":{},"id":"vueflow__edge-0jqlswm0jqlswm-output-fallback-n1xg1rvn1xg1rv-input-1","sourceX":2639.9999896685285,"sourceY":451.66673107279416,"targetX":3056.0000007947287,"targetY":442.5000647703781},{"type":"custom","updatable":true,"selectable":true,"markerEnd":"arrowclosed","sourceHandle":"0jqlswm-output-gbfdx5bwzUB_s8cTIyWH1","targetHandle":"n1xg1rv-input-1","source":"0jqlswm","target":"n1xg1rv","data":{},"events":{},"class":"source-0jqlswm-output-gbfdx5bwzUB_s8cTIyWH1 target-n1xg1rv-input-1","id":"vueflow__edge-0jqlswm0jqlswm-output-gbfdx5bwzUB_s8cTIyWH1-n1xg1rvn1xg1rv-input-1","sourceX":2640.9999998013177,"sourceY":409.6666106714165,"targetX":3056.0000007947287,"targetY":442.5000647703781},{"sourceHandle":"q6o3t0t-output-1","targetHandle":"cv2hqyr-input-1","type":"custom","source":"q6o3t0t","target":"cv2hqyr","updatable":true,"selectable":true,"data":{},"events":{},"markerEnd":"arrowclosed","id":"vueflow__edge-q6o3t0tq6o3t0t-output-1-cv2hqyrcv2hqyr-input-1","sourceX":1183.9999515215575,"sourceY":308.49997854232873,"targetX":1276.0000007947285,"targetY":442.5000647703781},{"sourceHandle":"5yjqpia-output-1","targetHandle":"wqkf1o8-input-1","type":"custom","source":"5yjqpia","target":"wqkf1o8","updatable":true,"selectable":true,"data":{},"events":{},"markerEnd":"arrowclosed","id":"vueflow__edge-5yjqpia5yjqpia-output-1-wqkf1o8wqkf1o8-input-1","sourceX":3707.9999896685285,"sourceY":442.5000647703781,"targetX":3768.0000007947287,"targetY":389.3333595262623},{"sourceHandle":"wqkf1o8-output-1","targetHandle":"869t8sn-input-1","type":"custom","source":"wqkf1o8","target":"869t8sn","updatable":true,"selectable":true,"data":{},"events":{},"class":"source-wqkf1o8-output-1 target-869t8sn-input-1","markerEnd":"arrowclosed","id":"vueflow__edge-wqkf1o8wqkf1o8-output-1-869t8sn869t8sn-input-1","sourceX":4063.9999896685285,"sourceY":389.3333595262623,"targetX":4124.000000794728,"targetY":442.5000647703781},{"sourceHandle":"869t8sn-output-1","targetHandle":"3ev4hk0-input-1","type":"custom","source":"869t8sn","target":"3ev4hk0","updatable":true,"selectable":true,"data":{},"events":{},"class":"source-869t8sn-output-1 target-3ev4hk0-input-1","markerEnd":"arrowclosed","id":"vueflow__edge-869t8sn869t8sn-output-1-3ev4hk03ev4hk0-input-1","sourceX":4419.9999896685285,"sourceY":442.5000647703781,"targetX":4462.068685077209,"targetY":465.5159986570757},{"sourceHandle":"3ev4hk0-output-1","targetHandle":"vufrgle-input-1","type":"custom","source":"3ev4hk0","target":"vufrgle","updatable":true,"selectable":true,"data":{},"events":{},"markerEnd":"arrowclosed","id":"vueflow__edge-3ev4hk03ev4hk0-output-1-vufrglevufrgle-input-1","sourceX":4694.068635804038,"sourceY":465.5159986570757,"targetX":4769.84982888559,"targetY":408.95395118626584}],"position":[-394.03752352556467,-2.5034619371908775],"zoom":0.5281554081378904,"viewport":{"x":-394.03752352556467,"y":-2.5034619371908775,"zoom":0.5281554081378904}},"settings":{"publicId":"","restartTimes":3,"notification":true,"tabLoadTimeout":30000,"inputAutocomplete":true,"insertDefaultColumn":false,"defaultColumnName":"column","blockDelay":0,"saveLog":true,"debugMode":false,"execContext":"popup","reuseLastState":false,"onError":"stop-workflow","executedBlockOnWeb":false},"globalData":"{\n\t\"key\": \"value\"\n}","description":"","includedWorkflows":{}}
+{
+    "extVersion": "1.28.27",
+    "name": "Create tumblr tournament",
+    "icon": "riGlobalLine",
+    "table": [
+        {
+            "id": "E5kuh",
+            "name": "Blogname",
+            "type": "string"
+        }
+    ],
+    "version": "1.28.27",
+    "drawflow": {
+        "nodes": [
+            {
+                "type": "BlockBasic",
+                "data": {
+                    "disableBlock": false,
+                    "description": "",
+                    "type": "manual",
+                    "interval": 60,
+                    "delay": 5,
+                    "date": "",
+                    "time": "00:00",
+                    "url": "",
+                    "shortcut": "",
+                    "activeInInput": false,
+                    "isUrlRegex": false,
+                    "days": [],
+                    "contextMenuName": "",
+                    "contextTypes": [],
+                    "parameters": [],
+                    "preferParamsInTab": false,
+                    "observeElement": {
+                        "selector": "",
+                        "baseSelector": "",
+                        "matchPattern": "",
+                        "targetOptions": {
+                            "subtree": false,
+                            "childList": true,
+                            "attributes": false,
+                            "attributeFilter": [],
+                            "characterData": false
+                        },
+                        "baseElOptions": {
+                            "subtree": false,
+                            "childList": true,
+                            "attributes": false,
+                            "attributeFilter": [],
+                            "characterData": false
+                        }
+                    }
+                },
+                "events": {},
+                "position": {
+                    "x": 96,
+                    "y": 272.5
+                },
+                "id": "ybGntIX-JM_Lax5r0OfKg",
+                "label": "trigger"
+            },
+            {
+                "type": "BlockBasic",
+                "data": {
+                    "disableBlock": false,
+                    "range": "A:I",
+                    "refKey": "allcontestants",
+                    "type": "get",
+                    "customData": "",
+                    "description": "",
+                    "spreadsheetId": "YOUR-SPREADSHEET-ID-HERE",
+                    "dataColumn": "",
+                    "saveData": true,
+                    "assignVariable": false,
+                    "variableName": "",
+                    "firstRowAsKey": true,
+                    "keysAsFirstRow": true,
+                    "valueInputOption": "RAW",
+                    "InsertDataOption": "INSERT_ROWS",
+                    "dataFrom": "data-columns",
+                    "$breakpoint": false
+                },
+                "events": {},
+                "position": {
+                    "x": 388,
+                    "y": 272.5
+                },
+                "label": "google-sheets",
+                "id": "5e8niky"
+            },
+            {
+                "type": "BlockBasic",
+                "data": {
+                    "disableBlock": false,
+                    "loopId": "pollcontestants",
+                    "maxLoop": 0,
+                    "toNumber": 10,
+                    "fromNumber": 1,
+                    "startIndex": "1",
+                    "loopData": [],
+                    "description": "Loop through tournament values",
+                    "variableName": "",
+                    "referenceKey": "allcontestants",
+                    "reverseLoop": false,
+                    "elementSelector": "",
+                    "waitForSelector": false,
+                    "waitSelectorTimeout": 5000,
+                    "resumeLastWorkflow": false,
+                    "loopThrough": "google-sheets"
+                },
+                "events": {},
+                "position": {
+                    "x": 680,
+                    "y": 272.5
+                },
+                "label": "loop-data",
+                "id": "76rf7x2"
+            },
+            {
+                "type": "BlockBasic",
+                "data": {
+                    "disableBlock": false,
+                    "description": "Open tumblr and create new text post",
+                    "url": "https://www.tumblr.com/new/text",
+                    "userAgent": "",
+                    "active": true,
+                    "tabZoom": 1,
+                    "inGroup": false,
+                    "waitTabLoaded": true,
+                    "updatePrevTab": false,
+                    "customUserAgent": false
+                },
+                "events": {},
+                "position": {
+                    "x": 972,
+                    "y": 272.5
+                },
+                "label": "new-tab",
+                "id": "q6o3t0t"
+            },
+            {
+                "type": "BlockBasic",
+                "data": {
+                    "disableBlock": false,
+                    "url": "",
+                    "description": "",
+                    "activeTab": true,
+                    "closeType": "tab",
+                    "allWindows": false
+                },
+                "events": {},
+                "position": {
+                    "x": 4482.068684282481,
+                    "y": 429.5159183894906
+                },
+                "label": "close-tab",
+                "id": "3ev4hk0"
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Fill out Header",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "itemId": "hoik1d3",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Heading",
+                                "findBy": "cssSelector",
+                                "waitForSelector": true,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Block: Heading\"]",
+                                "markEl": false,
+                                "multiple": false
+                            }
+                        },
+                        {
+                            "id": "forms",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Title",
+                                "findBy": "cssSelector",
+                                "waitForSelector": true,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Block: Heading\"]",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.Title }} ",
+                                "delay": 0,
+                                "events": []
+                            },
+                            "itemId": "TfYy-"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "t6fhka1",
+                "label": "blocks-group",
+                "position": {
+                    "x": 1652,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Create and fill out poll",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Body",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Add default block\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "JJl5m"
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Add poll",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Add poll\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "dDtek"
+                        },
+                        {
+                            "id": "forms",
+                            "itemId": "myxr2yd",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Question",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "div[aria-label=\"Ask a question...\"]",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.Question }}",
+                                "delay": 0,
+                                "events": []
+                            }
+                        },
+                        {
+                            "id": "forms",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Choice 1",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "div[aria-label=\"Choice 1\"]",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.Choice1 }}",
+                                "delay": 0,
+                                "events": []
+                            },
+                            "itemId": "DBjzN"
+                        },
+                        {
+                            "id": "forms",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Choice 2",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "div[aria-label=\"Choice 2\"]",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.Choice2 }}",
+                                "delay": 0,
+                                "events": []
+                            },
+                            "itemId": "ZEn29"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "n1xg1rv",
+                "label": "blocks-group",
+                "position": {
+                    "x": 3076,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Upload image 1",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Body",
+                                "findBy": "cssSelector",
+                                "waitForSelector": true,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Empty block; start writing or type forward slash to choose a block\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "dvKeC"
+                        },
+                        {
+                            "id": "event-click",
+                            "itemId": "wk9mh2p",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Photo icon",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Add photo\"]",
+                                "markEl": false,
+                                "multiple": false
+                            }
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Web img",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"Add images from web\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "h2CLM"
+                        },
+                        {
+                            "id": "forms",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "URL",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "input.Q1epK",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.ImageURL1 }}",
+                                "delay": 0,
+                                "events": []
+                            },
+                            "itemId": "SuzCd"
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Insert",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"Insert\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "PdBWL"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "y02n0k9",
+                "label": "blocks-group",
+                "position": {
+                    "x": 2008,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Change to queue and publish",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "itemId": "pvsd8jl",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Dropdown",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"Open post state options\"]",
+                                "markEl": false,
+                                "multiple": false
+                            }
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Queue",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": ".yPzUb:nth-child(2) > .MXQob",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "QtI5e"
+                        },
+                        {
+                            "id": "delay",
+                            "data": {
+                                "disableBlock": false,
+                                "time": "5000"
+                            },
+                            "itemId": "rVz3x"
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Publish",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button.VxmZd",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "qLOMz"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "869t8sn",
+                "label": "blocks-group",
+                "position": {
+                    "x": 4144,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Add tags",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "itemId": "glw1inm",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Tags editor",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "textarea[aria-label=\"Tags editor\"]",
+                                "markEl": false,
+                                "multiple": false
+                            }
+                        },
+                        {
+                            "id": "forms",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "cntstnt1",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "textarea[aria-label=\"Tags editor\"]",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.Tags }}",
+                                "delay": 0,
+                                "events": []
+                            },
+                            "itemId": "z9Msq"
+                        },
+                        {
+                            "id": "press-key",
+                            "data": {
+                                "disableBlock": false,
+                                "keys": "Enter",
+                                "selector": "",
+                                "pressTime": "0",
+                                "description": "",
+                                "keysToPress": "",
+                                "action": "press-key"
+                            },
+                            "itemId": "eTlqC"
+                        },
+                        {
+                            "id": "delay",
+                            "data": {
+                                "disableBlock": false,
+                                "time": "2000"
+                            },
+                            "itemId": "GT5at"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "5yjqpia",
+                "label": "blocks-group",
+                "position": {
+                    "x": 3432,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Change to correct blog",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Dropdown",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button.zOAiO",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "S3eqr"
+                        },
+                        {
+                            "id": "delay",
+                            "data": {
+                                "disableBlock": false,
+                                "time": 500
+                            },
+                            "itemId": "oPPoK"
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Blog name",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"TOURNAMENT-BLOG-NAME-HERE\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "3QbqD"
+                        },
+                        {
+                            "id": "delay",
+                            "data": {
+                                "disableBlock": false,
+                                "time": 500
+                            },
+                            "itemId": "M56-G"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "cv2hqyr",
+                "label": "blocks-group",
+                "position": {
+                    "x": 1296,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Upload image 2",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Body",
+                                "findBy": "cssSelector",
+                                "waitForSelector": true,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Add default block\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "dvKeC"
+                        },
+                        {
+                            "id": "event-click",
+                            "itemId": "wk9mh2p",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Photo icon",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "[aria-label=\"Add photo\"]",
+                                "markEl": false,
+                                "multiple": false
+                            }
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Web img",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"Add images from web\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "h2CLM"
+                        },
+                        {
+                            "id": "forms",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "URL",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "input.Q1epK",
+                                "markEl": false,
+                                "multiple": false,
+                                "selected": true,
+                                "clearValue": true,
+                                "getValue": false,
+                                "saveData": false,
+                                "dataColumn": "",
+                                "selectOptionBy": "value",
+                                "optionPosition": "1",
+                                "assignVariable": false,
+                                "variableName": "",
+                                "type": "text-field",
+                                "value": "!!{{ loopData@pollcontestants.ImageURL2 }}",
+                                "delay": 0,
+                                "events": []
+                            },
+                            "itemId": "SuzCd"
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "Insert",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"Insert\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "PdBWL"
+                        }
+                    ]
+                },
+                "events": {},
+                "label": "blocks-group",
+                "id": "030esj5",
+                "position": {
+                    "x": 2720,
+                    "y": 170
+                }
+            },
+            {
+                "type": "BlockConditions",
+                "data": {
+                    "description": "",
+                    "disableBlock": false,
+                    "conditions": [
+                        {
+                            "id": "ERjULwVQskFvI_ghqtvy_",
+                            "name": "Path 1",
+                            "conditions": [
+                                {
+                                    "id": "yPD3mg3aXpiFfcfmUmHED",
+                                    "conditions": [
+                                        {
+                                            "id": "ftevbKcRrmHkSP7HB9Vnk",
+                                            "items": [
+                                                {
+                                                    "type": "value",
+                                                    "category": "value",
+                                                    "data": {
+                                                        "value": "!!{{ loopData@pollcontestants.ImageURL2 }}"
+                                                    },
+                                                    "id": "G9g-mXWvLTDSR108FvUwn"
+                                                },
+                                                {
+                                                    "category": "compare",
+                                                    "type": "cnt",
+                                                    "id": "J2yx77IfMGB78o_UAgeeG"
+                                                },
+                                                {
+                                                    "type": "value",
+                                                    "category": "value",
+                                                    "data": {
+                                                        "value": "."
+                                                    },
+                                                    "id": "DiB98jbckZVkoTDAFJG_A"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "gbfdx5bwzUB_s8cTIyWH1",
+                            "name": "Path 2",
+                            "conditions": [
+                                {
+                                    "id": "zY4eJizoP5jn2srbvANAj",
+                                    "conditions": [
+                                        {
+                                            "id": "cBGnu0W7PzwIGmDgTwspe",
+                                            "items": [
+                                                {
+                                                    "type": "value",
+                                                    "category": "value",
+                                                    "data": {
+                                                        "value": "!!{{ loopData@pollcontestants.ImageURL2 }}"
+                                                    },
+                                                    "id": "-iJx6EcMg1wkU1bOr6S6j"
+                                                },
+                                                {
+                                                    "category": "compare",
+                                                    "type": "nci",
+                                                    "id": "RKqfGrm_40_ahY9i1mXGG"
+                                                },
+                                                {
+                                                    "type": "value",
+                                                    "category": "value",
+                                                    "data": {
+                                                        "value": "."
+                                                    },
+                                                    "id": "fZdfbqmfyqwCLfLwHeIIP"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "retryConditions": false,
+                    "retryCount": 10,
+                    "retryTimeout": 1000
+                },
+                "events": {},
+                "position": {
+                    "x": 2364,
+                    "y": 272.5
+                },
+                "label": "conditions",
+                "id": "0jqlswm"
+            },
+            {
+                "type": "BlockGroup",
+                "data": {
+                    "disableBlock": false,
+                    "name": "Change duration to 7 days",
+                    "blocks": [
+                        {
+                            "id": "event-click",
+                            "itemId": "gkxq398",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"Select poll duration\"]",
+                                "markEl": false,
+                                "multiple": false
+                            }
+                        },
+                        {
+                            "id": "event-click",
+                            "data": {
+                                "disableBlock": false,
+                                "description": "",
+                                "findBy": "cssSelector",
+                                "waitForSelector": false,
+                                "waitSelectorTimeout": 5000,
+                                "selector": "button[aria-label=\"1 Week\"]",
+                                "markEl": false,
+                                "multiple": false
+                            },
+                            "itemId": "DJDpJ"
+                        }
+                    ]
+                },
+                "events": {},
+                "id": "wqkf1o8",
+                "label": "blocks-group",
+                "position": {
+                    "x": 3788,
+                    "y": 272.5
+                }
+            },
+            {
+                "type": "BlockLoopBreakpoint",
+                "data": {
+                    "disableBlock": false,
+                    "loopId": "pollcontestants",
+                    "clearLoop": false
+                },
+                "events": {},
+                "position": {
+                    "x": 4789.849828090862,
+                    "y": 333.34286988851386
+                },
+                "label": "loop-breakpoint",
+                "id": "vufrgle"
+            }
+        ],
+        "edges": [
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "ybGntIX-JM_Lax5r0OfKg-output-1",
+                "targetHandle": "5e8niky-input-1",
+                "source": "ybGntIX-JM_Lax5r0OfKg",
+                "target": "5e8niky",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-ybGntIX-JM_Lax5r0OfKgybGntIX-JM_Lax5r0OfKg-output-1-cuu6wt2cuu6wt2-input-1",
+                "sourceX": 307.9999515215575,
+                "sourceY": 308.49997854232873,
+                "targetX": 368.0000007947286,
+                "targetY": 308.49997854232873,
+                "class": "connected-edges"
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "5e8niky-output-1",
+                "targetHandle": "76rf7x2-input-1",
+                "source": "5e8niky",
+                "target": "76rf7x2",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-5e8niky5e8niky-output-1-76rf7x276rf7x2-input-1",
+                "sourceX": 599.9999515215575,
+                "sourceY": 308.49997854232873,
+                "targetX": 660.0000007947285,
+                "targetY": 310.49999880790716,
+                "class": "connected-edges"
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "76rf7x2-output-1",
+                "targetHandle": "q6o3t0t-input-1",
+                "source": "76rf7x2",
+                "target": "q6o3t0t",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-76rf7x276rf7x2-output-1-q6o3t0tq6o3t0t-input-1",
+                "sourceX": 891.9999515215575,
+                "sourceY": 310.49999880790716,
+                "targetX": 952.0000007947285,
+                "targetY": 308.49997854232873
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "t6fhka1-output-1",
+                "targetHandle": "y02n0k9-input-1",
+                "source": "t6fhka1",
+                "target": "y02n0k9",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-t6fhka1t6fhka1-output-1-y02n0k9y02n0k9-input-1",
+                "sourceX": 1927.9999896685285,
+                "sourceY": 404.1667329602745,
+                "targetX": 1988.0000007947285,
+                "targetY": 442.5000647703781
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "n1xg1rv-output-1",
+                "targetHandle": "5yjqpia-input-1",
+                "source": "n1xg1rv",
+                "target": "5yjqpia",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-n1xg1rvn1xg1rv-output-1-5yjqpia5yjqpia-input-1",
+                "sourceX": 3351.9999896685285,
+                "sourceY": 442.5000647703781,
+                "targetX": 3412.0000007947287,
+                "targetY": 442.5000647703781
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "cv2hqyr-output-1",
+                "targetHandle": "t6fhka1-input-1",
+                "source": "cv2hqyr",
+                "target": "t6fhka1",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-cv2hqyrcv2hqyr-output-1-t6fhka1t6fhka1-input-1",
+                "sourceX": 1571.9999896685285,
+                "sourceY": 442.5000647703781,
+                "targetX": 1632.0000007947285,
+                "targetY": 404.1667329602745
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "030esj5-output-1",
+                "targetHandle": "n1xg1rv-input-1",
+                "source": "030esj5",
+                "target": "n1xg1rv",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-030esj5030esj5-output-1-n1xg1rvn1xg1rv-input-1",
+                "sourceX": 2995.9999896685285,
+                "sourceY": 340.0000647703781,
+                "targetX": 3056.0000007947287,
+                "targetY": 442.5000647703781
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "y02n0k9-output-1",
+                "targetHandle": "0jqlswm-input-1",
+                "source": "y02n0k9",
+                "target": "0jqlswm",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-y02n0k9y02n0k9-output-1-0jqlswm0jqlswm-input-1",
+                "sourceX": 2283.9999896685285,
+                "sourceY": 442.5000647703781,
+                "targetX": 2344.0000007947287,
+                "targetY": 375.05560944256746
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "0jqlswm-output-ERjULwVQskFvI_ghqtvy_",
+                "targetHandle": "030esj5-input-1",
+                "source": "0jqlswm",
+                "target": "030esj5",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-0jqlswm0jqlswm-output-ERjULwVQskFvI_ghqtvy_-030esj5030esj5-input-1",
+                "sourceX": 2640.9999998013177,
+                "sourceY": 361.6667346490727,
+                "targetX": 2700.0000007947287,
+                "targetY": 340.0000647703781
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "0jqlswm-output-fallback",
+                "targetHandle": "n1xg1rv-input-1",
+                "source": "0jqlswm",
+                "target": "n1xg1rv",
+                "data": {},
+                "events": {},
+                "id": "vueflow__edge-0jqlswm0jqlswm-output-fallback-n1xg1rvn1xg1rv-input-1",
+                "sourceX": 2639.9999896685285,
+                "sourceY": 451.66673107279416,
+                "targetX": 3056.0000007947287,
+                "targetY": 442.5000647703781
+            },
+            {
+                "type": "custom",
+                "updatable": true,
+                "selectable": true,
+                "markerEnd": "arrowclosed",
+                "sourceHandle": "0jqlswm-output-gbfdx5bwzUB_s8cTIyWH1",
+                "targetHandle": "n1xg1rv-input-1",
+                "source": "0jqlswm",
+                "target": "n1xg1rv",
+                "data": {},
+                "events": {},
+                "class": "source-0jqlswm-output-gbfdx5bwzUB_s8cTIyWH1 target-n1xg1rv-input-1",
+                "id": "vueflow__edge-0jqlswm0jqlswm-output-gbfdx5bwzUB_s8cTIyWH1-n1xg1rvn1xg1rv-input-1",
+                "sourceX": 2640.9999998013177,
+                "sourceY": 409.6666106714165,
+                "targetX": 3056.0000007947287,
+                "targetY": 442.5000647703781
+            },
+            {
+                "sourceHandle": "q6o3t0t-output-1",
+                "targetHandle": "cv2hqyr-input-1",
+                "type": "custom",
+                "source": "q6o3t0t",
+                "target": "cv2hqyr",
+                "updatable": true,
+                "selectable": true,
+                "data": {},
+                "events": {},
+                "markerEnd": "arrowclosed",
+                "id": "vueflow__edge-q6o3t0tq6o3t0t-output-1-cv2hqyrcv2hqyr-input-1",
+                "sourceX": 1183.9999515215575,
+                "sourceY": 308.49997854232873,
+                "targetX": 1276.0000007947285,
+                "targetY": 442.5000647703781
+            },
+            {
+                "sourceHandle": "5yjqpia-output-1",
+                "targetHandle": "wqkf1o8-input-1",
+                "type": "custom",
+                "source": "5yjqpia",
+                "target": "wqkf1o8",
+                "updatable": true,
+                "selectable": true,
+                "data": {},
+                "events": {},
+                "markerEnd": "arrowclosed",
+                "id": "vueflow__edge-5yjqpia5yjqpia-output-1-wqkf1o8wqkf1o8-input-1",
+                "sourceX": 3707.9999896685285,
+                "sourceY": 442.5000647703781,
+                "targetX": 3768.0000007947287,
+                "targetY": 389.3333595262623
+            },
+            {
+                "sourceHandle": "wqkf1o8-output-1",
+                "targetHandle": "869t8sn-input-1",
+                "type": "custom",
+                "source": "wqkf1o8",
+                "target": "869t8sn",
+                "updatable": true,
+                "selectable": true,
+                "data": {},
+                "events": {},
+                "class": "source-wqkf1o8-output-1 target-869t8sn-input-1",
+                "markerEnd": "arrowclosed",
+                "id": "vueflow__edge-wqkf1o8wqkf1o8-output-1-869t8sn869t8sn-input-1",
+                "sourceX": 4063.9999896685285,
+                "sourceY": 389.3333595262623,
+                "targetX": 4124.000000794728,
+                "targetY": 442.5000647703781
+            },
+            {
+                "sourceHandle": "869t8sn-output-1",
+                "targetHandle": "3ev4hk0-input-1",
+                "type": "custom",
+                "source": "869t8sn",
+                "target": "3ev4hk0",
+                "updatable": true,
+                "selectable": true,
+                "data": {},
+                "events": {},
+                "class": "source-869t8sn-output-1 target-3ev4hk0-input-1",
+                "markerEnd": "arrowclosed",
+                "id": "vueflow__edge-869t8sn869t8sn-output-1-3ev4hk03ev4hk0-input-1",
+                "sourceX": 4419.9999896685285,
+                "sourceY": 442.5000647703781,
+                "targetX": 4462.068685077209,
+                "targetY": 465.5159986570757
+            },
+            {
+                "sourceHandle": "3ev4hk0-output-1",
+                "targetHandle": "vufrgle-input-1",
+                "type": "custom",
+                "source": "3ev4hk0",
+                "target": "vufrgle",
+                "updatable": true,
+                "selectable": true,
+                "data": {},
+                "events": {},
+                "markerEnd": "arrowclosed",
+                "id": "vueflow__edge-3ev4hk03ev4hk0-output-1-vufrglevufrgle-input-1",
+                "sourceX": 4694.068635804038,
+                "sourceY": 465.5159986570757,
+                "targetX": 4769.84982888559,
+                "targetY": 408.95395118626584
+            }
+        ],
+        "position": [
+            -394.03752352556467,
+            -2.5034619371908775
+        ],
+        "zoom": 0.5281554081378904,
+        "viewport": {
+            "x": -394.03752352556467,
+            "y": -2.5034619371908775,
+            "zoom": 0.5281554081378904
+        }
+    },
+    "settings": {
+        "publicId": "",
+        "restartTimes": 3,
+        "notification": true,
+        "tabLoadTimeout": 30000,
+        "inputAutocomplete": true,
+        "insertDefaultColumn": false,
+        "defaultColumnName": "column",
+        "blockDelay": 0,
+        "saveLog": true,
+        "debugMode": false,
+        "execContext": "popup",
+        "reuseLastState": false,
+        "onError": "stop-workflow",
+        "executedBlockOnWeb": false
+    },
+    "globalData": {
+        "key": "value"
+    },
+    "description": "",
+    "includedWorkflows": {}
+}
