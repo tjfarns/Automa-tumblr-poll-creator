@@ -8,7 +8,7 @@ If you’ve ever wanted to run a tournament but don’t love the idea of manuall
 ### Things You’ll Need: 
 * An account on tumblr and a blog to publish to
 * The browser extension “Automa” (available in both Chrome and Firefox)
-* This specific Automa workflow import file
+* The .json Automa import file included in this repo
 * A Google Sheet spreadsheet with some specific column headers ([template here](https://docs.google.com/spreadsheets/d/1eF-1u3MfXCt0riDgh28uxfJu2iNxu607RwY-6fyWi4M/edit?usp=sharing))
 ### Steps: 
 1. If you haven’t already, download the Automa extension. ([Firefox link](https://addons.mozilla.org/en-US/firefox/addon/automa/)) ([Chrome link](https://chromewebstore.google.com/detail/automa/infppggnoaenmfagbfknfkancpbljcca?pli=1))
